@@ -1,11 +1,12 @@
 import React from "react"
 import '../App.css'
 
-function Questions() {
-    <div>
-        <h1>Questions</h1>
-        <hi>Hiii</hi>
-    </div>
+function Questions(props) {
+    return (
+        <div>
+            <button className="questions-btn">Check Answers</button>
+        </div>
+    )
 }
 
 export default Questions
