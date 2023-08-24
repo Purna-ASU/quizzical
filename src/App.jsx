@@ -37,7 +37,7 @@ function App() {
       { start ?
         <div className='start-container'>
           <h1 className='start-header'>Quizzical</h1>
-          <p className='start-desc'>some description if needed</p>
+          <p className='start-desc'>Answer the Trivia and Test Your Knowledge!</p>
           <button className='start-btn' onClick={() => setStart(false)}>Start Quiz</button>
         </div> :
         <div>

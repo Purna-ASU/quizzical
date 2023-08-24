@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Questions(props) {
     const { question, options, correctOption } = props;
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const handleOptionClick = (option) => {
+        setSelectedOption(option);
+    };
 
     return (
-        <div>
+        <div className="questions-container">
             <h1 className="questions-title">{question}</h1>
-            <p className="questions-options">
+            <form className="questions-options">
                 {options.map((option, index) => (
-                    <span key={index}>{option}</span>
+                    <div
+                        key={index}
+                        className={`custom-option ${selectedOption === option ? "selected" : ""}`}
+                        onClick={() => handleOptionClick(option)}
+                    >
+                        {option}
+                    </div>
                 ))}
-            </p>
+            </form>
         </div>
     );
 }
-
 
 export default Questions;
