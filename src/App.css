@@ -8,7 +8,12 @@ body {
   display: flex; 
   justify-content: center; 
   align-items: center;
-  height: 80vh; 
+  height: 100vh;
+}
+
+.start-container {
+  align-items: center;
+  text-align: center;
 }
 
 main {
@@ -16,7 +21,7 @@ main {
   font-family: 'Karla', sans-serif;
 }
 
-.start-header {
+.start-header, .questions-title {
   color: #293264;
   font-size: 31.25px;
   font-weight: 700;

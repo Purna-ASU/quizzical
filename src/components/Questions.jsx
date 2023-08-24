@@ -1,12 +1,19 @@
-import React from "react"
-import '../App.css'
+import React from "react";
 
 function Questions(props) {
+    const { question, options, correctOption } = props;
+
     return (
         <div>
-            <button className="questions-btn">Check Answers</button>
+            <h1 className="questions-title">{question}</h1>
+            <p className="questions-options">
+                {options.map((option, index) => (
+                    <span key={index}>{option}</span>
+                ))}
+            </p>
         </div>
-    )
+    );
 }
 
-export default Questions
+
+export default Questions;
