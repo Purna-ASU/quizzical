@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import './App.css'
 import Questions from './components/Questions'
+import he from 'he';
 
 function App() {
 
@@ -13,8 +14,9 @@ function App() {
       const data = await res.json()
       setQuestions(data.results.map(questionsData => {
         const options = [...questionsData.incorrect_answers, questionsData.correct_answer]
+        const question = he.decode(questionsData.question);
         return {
-          question: questionsData.question,
+          question: question,
           options: options,
           correctOption: questionsData.correct_answer
         }

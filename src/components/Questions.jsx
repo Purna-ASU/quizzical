@@ -4,7 +4,7 @@ function Questions(props) {
     const { question, options, correctOption } = props;
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const handleOptionClick = (option) => {
+    const handleClick = (option) => {
         setSelectedOption(option);
     };
 
@@ -16,7 +16,7 @@ function Questions(props) {
                     <div
                         key={index}
                         className={`custom-option ${selectedOption === option ? "selected" : ""}`}
-                        onClick={() => handleOptionClick(option)}
+                        onClick={() => handleClick(option)}
                     >
                         {option}
                     </div>
