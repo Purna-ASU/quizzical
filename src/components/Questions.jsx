@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
 function Questions(props) {
-    const { question, options, correctOption } = props;
+    const { question, options, correctOption, score, updateScore } = props;
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleClick = (option) => {
         setSelectedOption(option);
+        const isCorrect = option === correctOption
+        updateScore(isCorrect)
     };
+
+    console.log(selectedOption)
 
     return (
         <div className="questions-container">

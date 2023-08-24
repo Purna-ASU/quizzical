@@ -7,6 +7,14 @@ function App() {
 
   const [start, setStart] = useState(true)
   const [questions,setQuestions] = useState([])
+  const [score, setScore] = useState(0)
+  const [showScore, setShowScore] = useState(false)
+  
+  const updateScore = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+  };
 
   useEffect(() => {
     async function getQuestions() {
@@ -18,7 +26,7 @@ function App() {
         return {
           question: question,
           options: options,
-          correctOption: questionsData.correct_answer
+          correctOption: questionsData.correct_answer,
         }
       }))
     }
@@ -30,9 +38,14 @@ function App() {
     key={index}
     question={questionData.question}
     options={questionData.options}
-    correctOption={questionData.correctOption} />
+    correctOption={questionData.correctOption}
+    score={score}
+    updateScore={updateScore} />
   ));
 
+  function checkAnswers() {
+    setShowScore(true)
+  }
   
   return (
     <main>
@@ -44,7 +57,10 @@ function App() {
         </div> :
         <div>
           {questionComponents}
-          <button className="questions-btn">Check Answers</button>
+          <div className='score-container'>
+            {showScore && <h1 className='score-statement'>You scored {score}/10 correct answers</h1>}
+            <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
+          </div>
         </div>
       }
     </main>
