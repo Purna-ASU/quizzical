@@ -10,6 +10,7 @@ function App() {
   const [questions,setQuestions] = useState([])
   const [score, setScore] = useState(0)
   const [showScore, setShowScore] = useState(false)
+  const [showConfetti, setShowConfetti] = useState(false)
   
   const updateScore = (isCorrect) => {
     if (isCorrect) {
@@ -45,7 +46,13 @@ function App() {
   ));
 
   function checkAnswers() {
-
+    setShowScore(true)
+    if(score === 10){
+      setShowConfetti(true)
+      setTimeout(() => {
+        setShowConfetti(false)
+      },9000)
+    }
   }
   
   return (
@@ -62,7 +69,7 @@ function App() {
             {showScore && <h1 className='score-statement'>You scored {score}/10 correct answers</h1>}
             <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
           </div>
-          {/* {score === 10 && <Confetti width={document.body.clientWidth} height={document.body.clientHeight}/>} */}
+          {showConfetti && <Confetti width={document.body.clientWidth} height={document.body.clientHeight}/>}
         </div>
       }
     </main>

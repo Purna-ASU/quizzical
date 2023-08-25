@@ -78,7 +78,6 @@ main {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px; 
-  z-index: 1;
 }
 
 .questions-btn {
@@ -123,7 +122,4 @@ main {
   background-color: #D6DBF5;
 }
 
-.ReactConfetti {
-  z-index: 0; 
-}
 
