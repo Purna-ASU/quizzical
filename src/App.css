@@ -118,6 +118,14 @@ main {
   background-color: #D6DBF5;
 }
 
+.custom-option.selected-correct {
+  background-color: #94D7A2;
+}
+
+.custom-option.selected-wrong {
+  background-color: #F8BCBC;
+}
+
 .custom-option:hover {
   background-color: #D6DBF5;
 }

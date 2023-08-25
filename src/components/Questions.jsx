@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 function Questions(props) {
-    const { question, options, correctOption, score, updateScore } = props;
+    const { question, options, correctOption, score, updateScore, answersSubmitted } = props;
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleClick = (option) => {
         setSelectedOption(option);
+
         const isCorrect = option === correctOption
         updateScore(isCorrect)
     };
@@ -17,7 +18,10 @@ function Questions(props) {
                 {options.map((option, index) => (
                     <div
                         key={index}
-                        className={`custom-option ${selectedOption === option ? "selected" : ""}`}
+                        className={`custom-option 
+                            ${selectedOption === option ? "selected" : ""}
+                            ${(answersSubmitted && selectedOption === option && option === correctOption) ? "selected-correct" : ""}
+                            ${(answersSubmitted && selectedOption === option && option !== correctOption) ? "selected-wrong" : ""}`}
                         onClick={() => handleClick(option)}
                     >
                         {option}

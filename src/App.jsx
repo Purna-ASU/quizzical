@@ -8,9 +8,11 @@ function App() {
 
   const [start, setStart] = useState(true)
   const [questions,setQuestions] = useState([])
+  const [answersSubmitted, setAnswersSubmitted] = useState(false)
   const [score, setScore] = useState(0)
   const [showScore, setShowScore] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
+
   
   const updateScore = (isCorrect) => {
     if (isCorrect) {
@@ -42,11 +44,14 @@ function App() {
     options={questionData.options}
     correctOption={questionData.correctOption}
     score={score}
-    updateScore={updateScore} />
+    updateScore={updateScore}
+    answersSubmitted={answersSubmitted} />
   ));
 
   function checkAnswers() {
     setShowScore(true)
+    setAnswersSubmitted(true)
+
     if(score === 10){
       setShowConfetti(true)
       setTimeout(() => {
