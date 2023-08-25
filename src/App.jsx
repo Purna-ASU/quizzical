@@ -12,7 +12,7 @@ function App() {
   
   const updateScore = (isCorrect) => {
     if (isCorrect) {
-      setScore(score + 1);
+      setScore(prevScore => isCorrect ? score + 1 : prevScore);
     }
   };
 
@@ -68,3 +68,19 @@ function App() {
 }
 
 export default App
+
+
+
+/* ------------------------------BUGS-------------------------------
+1. The Counter updates whenever the option changes
+2. Correct options are always in the end
+3. Options need to be decoded
+4. 
+*/
+
+/* -------------------------Improvizations---------------------------
+1. Change the color of the wrong answers as red and display the correct answers in green after checking answers
+2. All the options except the correct options need to be blurred
+3. Ask the user about the category and no of questions and difficulty
+4. 
+*/

@@ -10,8 +10,6 @@ function Questions(props) {
         updateScore(isCorrect)
     };
 
-    console.log(selectedOption)
-
     return (
         <div className="questions-container">
             <h1 className="questions-title">{question}</h1>
