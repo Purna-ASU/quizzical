@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import './App.css'
 import Questions from './components/Questions'
 import he from 'he';
+import Confetti from 'react-confetti';
 
 function App() {
 
@@ -44,7 +45,7 @@ function App() {
   ));
 
   function checkAnswers() {
-    setShowScore(true)
+
   }
   
   return (
@@ -61,6 +62,7 @@ function App() {
             {showScore && <h1 className='score-statement'>You scored {score}/10 correct answers</h1>}
             <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
           </div>
+          {/* {score === 10 && <Confetti width={document.body.clientWidth} height={document.body.clientHeight}/>} */}
         </div>
       }
     </main>
