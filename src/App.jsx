@@ -59,6 +59,13 @@ function App() {
       },9000)
     }
   }
+
+  function resetQuiz() {
+    setAnswersSubmitted(false);
+    setShowScore(false);
+    setScore(0);
+    setStart(true); // Set start to true to show the start screen again.
+  };
   
   return (
     <main>
@@ -73,7 +80,7 @@ function App() {
           <div className="score-container">
             {showScore && <h1 className="score-statement">You scored {score}/10 correct answers</h1>}
             {answersSubmitted ? (
-              <button className="questions-btn" onClick={() => setAnswersSubmitted(false)}>Play Again</button>
+              <button className="questions-btn" onClick={resetQuiz}>Play Again</button>
             ) : (
               <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
             )}
