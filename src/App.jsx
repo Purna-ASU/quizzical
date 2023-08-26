@@ -105,8 +105,5 @@ export default App
 */
 
 /* -------------------------Improvizations---------------------------
-1. 
-2. All the options except the correct options need to be blurred
-3. Ask the user about the category and no of questions and difficulty
-4. 
+1. All the options except the correct options need to be blurred (Figma Design)
 */
