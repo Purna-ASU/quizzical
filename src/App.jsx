@@ -70,9 +70,13 @@ function App() {
         </div> :
         <div>
           {questionComponents}
-          <div className='score-container'>
-            {showScore && <h1 className='score-statement'>You scored {score}/10 correct answers</h1>}
-            <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
+          <div className="score-container">
+            {showScore && <h1 className="score-statement">You scored {score}/10 correct answers</h1>}
+            {answersSubmitted ? (
+              <button className="questions-btn" onClick={() => setAnswersSubmitted(false)}>Play Again</button>
+            ) : (
+              <button className="questions-btn" onClick={checkAnswers}>Check Answers</button>
+            )}
           </div>
           {showConfetti && <Confetti width={document.body.clientWidth} height={document.body.clientHeight}/>}
         </div>
@@ -89,11 +93,12 @@ export default App
 1. The Counter updates whenever the option changes
 2. Correct options are always in the end
 3. Options need to be decoded
-4. 
+4. Options cannot be changed/ Changed options cannot be counted
+5. 
 */
 
 /* -------------------------Improvizations---------------------------
-1. Change the color of the wrong answers as red and display the correct answers in green after checking answers
+1. 
 2. All the options except the correct options need to be blurred
 3. Ask the user about the category and no of questions and difficulty
 4. 
