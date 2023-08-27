@@ -101,11 +101,5 @@ export default App
 
 
 /* ------------------------------BUGS-------------------------------
-1. The Counter updates whenever the option changes
-2. Options need to be decoded
-3. Options cannot be changed/ Changed options cannot be counted
-*/
-
-/* -------------------------Improvizations---------------------------
-1. All the options except the correct options need to be blurred (Figma Design)
+1. Options need to be decoded (Sports (Easy Category))
 */
