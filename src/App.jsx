@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     async function getQuestions() {
-      const res = await fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple")
+      const res = await fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple")
       const data = await res.json()
       setQuestions(data.results.map(questionsData => {
         const options = [...questionsData.incorrect_answers, questionsData.correct_answer]
@@ -68,7 +68,7 @@ function App() {
     setAnswersSubmitted(false);
     setShowScore(false);
     setScore(0);
-    setStart(true); // Set start to true to show the start screen again.
+    setStart(true);
   };
   
   return (
