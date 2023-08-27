@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     async function getQuestions() {
-      const res = await fetch("https://opentdb.com/api.php?amount=10&category=21&difficulty=hard&type=multiple")
+      const res = await fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple")
       const data = await res.json()
       setQuestions(data.results.map(questionsData => {
         const options = [...questionsData.incorrect_answers, questionsData.correct_answer]
@@ -102,10 +102,8 @@ export default App
 
 /* ------------------------------BUGS-------------------------------
 1. The Counter updates whenever the option changes
-2. Correct options are always in the end
-3. Options need to be decoded
-4. Options cannot be changed/ Changed options cannot be counted
-5. 
+2. Options need to be decoded
+3. Options cannot be changed/ Changed options cannot be counted
 */
 
 /* -------------------------Improvizations---------------------------
