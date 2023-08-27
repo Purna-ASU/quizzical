@@ -26,6 +26,10 @@ function App() {
       const data = await res.json()
       setQuestions(data.results.map(questionsData => {
         const options = [...questionsData.incorrect_answers, questionsData.correct_answer]
+        for (let i = options.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [options[i], options[j]] = [options[j], options[i]];
+        }
         const question = he.decode(questionsData.question);
         return {
           question: question,
