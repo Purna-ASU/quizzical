@@ -21,6 +21,7 @@ function Questions(props) {
                         className={`custom-option 
                             ${(answersSubmitted && option === correctOption) ? "selected-correct" : ""}
                             ${(answersSubmitted && selectedOption === option && option !== correctOption) ? "selected-wrong" : ""}
+                            ${(answersSubmitted && option !== correctOption) ? "blur-incorrect" : ""}
                             ${selectedOption === option ? "selected" : ""}`}
                         onClick={() => handleClick(option)}
                     >

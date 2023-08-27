@@ -130,4 +130,7 @@ main {
   background-color: #D6DBF5;
 }
 
+.custom-option.blur-incorrect {
+  filter: blur(1px); 
+}
 
