@@ -5,6 +5,9 @@ function Questions(props) {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleClick = (option) => {
+        if (answersSubmitted) {
+            return;
+        }
         setSelectedOption(option);
 
         const isCorrect = option === correctOption
