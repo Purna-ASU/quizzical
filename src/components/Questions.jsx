@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Questions(props) {
-    const { question, options, correctOption, score, updateScore, answersSubmitted } = props;
+    const { question, options, correctOption, updateScore, answersSubmitted } = props;
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleClick = (option) => {
@@ -19,9 +19,9 @@ function Questions(props) {
                     <div
                         key={index}
                         className={`custom-option 
-                            ${selectedOption === option ? "selected" : ""}
-                            ${(answersSubmitted && selectedOption === option && option === correctOption) ? "selected-correct" : ""}
-                            ${(answersSubmitted && selectedOption === option && option !== correctOption) ? "selected-wrong" : ""}`}
+                            ${(answersSubmitted && option === correctOption) ? "selected-correct" : ""}
+                            ${(answersSubmitted && selectedOption === option && option !== correctOption) ? "selected-wrong" : ""}
+                            ${selectedOption === option ? "selected" : ""}`}
                         onClick={() => handleClick(option)}
                     >
                         {option}
